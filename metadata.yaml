@@ -1,0 +1,9 @@
+homepage: "https://www.forcookie.com"
+documentation: "https://www.forcookie.com/en/forcookie-install-tagmanager/"
+versions:
+  - sha: d121002
+    changeNotes: "Update Lisance"
+  - sha: 3c60f9b
+    changeNotes: "Create Template"
+  - sha: 54ad467
+    changeNotes: "Update Readme"
