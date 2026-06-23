@@ -1,22 +1,125 @@
-# Custom templates for Google Tag Manager
-In this repository, I intend to collect [custom template files](https://www.simoahava.com/analytics/custom-templates-guide-for-google-tag-manager/) for [Google Tag Manager](https://tagmanager.google.com/).
+# ForCookie Consent Management (GTM Template)
 
-# License
-The repository itself is released to the public under the [MIT License](https://opensource.org/licenses/MIT). By submitting a template into this repository, you accept that the template will fall under this license, too. You can submit a difference `LICENSE` file in the folder to where you upload your own template, in case you want it to override the default MIT license used in the repo.
+ForCookie is a lightweight consent management solution designed to integrate with Google Tag Manager (GTM) and Google Consent Mode v2.
 
-# Instructions
-To import a template file into your Google Tag Manager container, follow these steps:
+It allows website owners to collect and manage user cookie preferences and control GTM tags based on user consent.
 
-1. Download the `.tpl` file you want to import.
-2. Create a new **template** in Google Tag Manager (either *tag* or *variable*, depending on which type you are importing).
-3. In the action menu in the top right corner of the template editor, choose **Import**.
-4. Select the `.tpl` file from your container.
+---
 
-Importing a template file like this always **overwrites** any work you might have done in the underlying template, so you should always import to a newly created template.
+## 🚀 Features
 
-# Taxonomy
-Templates are organized by type (**tag** or **variable**).
+- Google Consent Mode v2 support
+- GTM native template integration
+- Control over analytics and marketing tags
+- GDPR / KVKK / LGPD compliant consent flow
+- Lightweight and fast execution
+- No external tracking of user consent data
 
-Tag templates are organized by brand (e.g. **Facebook**), and then by template name.
+---
 
-Variable templates are organized by template name.
+## 📦 Installation (Google Tag Manager)
+
+1. Open your Google Tag Manager account
+2. Go to **Templates → Tag Templates**
+3. Click **Search Gallery**
+4. Import the ForCookie template
+5. Create a new tag using the template
+6. Set trigger to:
+
+   **Consent Initialization – All Pages**
+7. Publish your container
+
+---
+
+## ⚙️ How it works
+
+ForCookie works with Google Consent Mode by setting default consent states on page load and updating them based on user interaction.
+
+### Default state (on page load)
+
+- analytics_storage: denied
+- ad_storage: denied
+- functionality_storage: denied
+
+### User interaction
+
+When a user updates their preferences, consent states are updated via GTM Consent API.
+
+---
+
+## 🔄 Consent Flow
+
+Page Load  
+→ Default consent is set (denied)
+
+User selects preferences  
+→ Consent is updated via GTM
+
+GTM Tags  
+→ Execute based on consent state
+
+---
+
+## 🌐 Data Privacy
+
+ForCookie does not collect, store, or transmit any personal user data outside of the website where it is installed.
+
+No consent or tracking data is sent to external servers.
+
+The only external domain used is:
+
+- https://www.forcookie.com (documentation and support only)
+
+---
+
+## 🧩 GTM Integration
+
+This template is designed for use inside Google Tag Manager only.
+
+All tracking tags (GA4, Ads, etc.) must be managed through GTM and respect Consent Mode settings.
+
+---
+
+## 📌 Requirements
+
+- Google Tag Manager container
+- Consent Mode v2 enabled
+- All marketing tags configured inside GTM
+
+---
+
+## 🔐 Compliance
+
+This template is designed to help comply with:
+
+- GDPR
+- ePrivacy Directive
+- KVKK
+- LGPD
+
+However, legal compliance depends on your implementation.
+
+---
+
+## 📖 Versioning
+
+All template versions are tracked via Git commit SHA in metadata.yaml.
+
+---
+
+## 🧠 Important Notes
+
+- This template does not automatically block GTM
+- It only controls consent signals inside GTM
+- Incorrect GTM setup may result in tracking misconfiguration
+
+---
+
+## 📞 Support & Documentation
+
+For detailed installation and setup guides:
+
+- **Turkish (TR):** https://www.forcookie.com/forcookie-tagmanager-nasil-kurulur/
+- **English (EN):** https://www.forcookie.com/en/forcookie-install-tagmanager/
+
+General support: https://www.forcookie.com
